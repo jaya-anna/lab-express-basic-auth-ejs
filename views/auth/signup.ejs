@@ -1,0 +1,32 @@
+<h1>Signup</h1>
+<form method="POST" action="/auth/signup">
+  <label>
+    Username: <input type="text" name="username" placeholder="hacker@hacker.com"
+    style="margin: 5px 20px" <% if (typeof errorMessage !== 'undefined') { %>
+    value="<%= userData.username %>" <% } %> />
+  </label>
+  <br />
+  <label
+    >Password: <input type="password" name="password" placeholder="********"
+    required style="margin: 5px 23px" <% if (typeof errorMessage !==
+    'undefined') { %> value="<%= userData.email %>" <% } %> /><br />
+  </label>
+  <button
+    type="submit"
+    style="
+      margin: 20px 50px;
+      color: white;
+      background-color: black;
+      border-radius: 20px;
+      border-color: black;
+      width: 160px;
+      height: 35px;
+      font-size: medium;
+    "
+  >
+    Create account
+  </button>
+</form>
+<% if (typeof errorMessage !== 'undefined') { %>
+<p style="color: red"><%= errorMessage %></p>
+<% } %>
